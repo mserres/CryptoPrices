@@ -11,7 +11,7 @@ def main(argv):
 	alert = 0
 	message = ""
 	prices = []
-	date = str(datetime.datetime.now())
+	date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
 	for ticker in tickers:
 		for exchange in exchanges:
@@ -175,7 +175,7 @@ class AppURLopener(ur.FancyURLopener):
     version = "Mozilla/5.0"
 
 def export_html(date, tickers, exchanges, prices):
-	output = open("../web/prices/exchanges-prices.html", 'w')
+	output = open("../web/prices/exchange-prices.html", 'w')
 	output.truncate()
 	output.write("""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
