@@ -137,7 +137,7 @@ def get_prices(exchange, ticker):
 		opener = AppURLopener()
 
 		try:
-			response = opener.open(url).read()
+			response = opener.open(url).read().decode('utf8')
 
 			if exchange == "bitstamp":
 				data = [json.loads(response)['bid'], json.loads(response)['ask']]
